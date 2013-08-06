@@ -1,5 +1,5 @@
 class redis::config {
-  file { $lsh::target:
+  file { $redis::config:
     ensure  => present,
     owner   => root,
     group   => root,

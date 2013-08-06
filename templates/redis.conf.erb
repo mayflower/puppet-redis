@@ -1,5 +1,5 @@
 # managed by puppet
-<% scope.lookupvar('redis::config::config_hash').sort.each do |k,v| -%>
+<% scope.lookupvar('redis::config_hash').sort.each do |k,v| -%>
 <% if v.is_a?(Array) -%>
 <%- v.each do |it| %>
 <%= k %> <%= it %><% end %>

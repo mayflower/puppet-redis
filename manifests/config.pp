@@ -1,8 +1,5 @@
-class redis::config (
-  $target       = $redis::params::config,
-  $config_hash  = $redis::params::config_hash
-) inherits redis::params {
-  file { $target:
+class redis::config {
+  file { $lsh::target:
     ensure  => present,
     owner   => root,
     group   => root,

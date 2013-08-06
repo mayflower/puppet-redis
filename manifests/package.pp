@@ -1,3 +1,5 @@
-class redis::package inherits redis::params {
-  package { $redis::params::package: ensure => $redis::params::ensure }
+class redis::package {
+  package { $redis::package:
+    ensure => $redis::package_ensure,
+  }
 }

@@ -1,8 +1,11 @@
-class redis::service inherits redis::params {
-  service { $redis::Params::service:
-    ensure => $redis::params::ensure ? {
-      'present' => 'running',
-      default   => $redis::params::ensure
-    }
+class redis::service {
+
+  $ensure = $redis::service_ensure ? {
+    'present' => 'running',
+    default   => $redis::service_ensure,
+  }
+
+  service { $redis::service:
+    ensure => $ensure,
   }
 }
